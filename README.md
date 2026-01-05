@@ -7,6 +7,7 @@ Current Status
 -MongoDB connection setup using Mongoose
 -Backend APIs in progress
 -Frontend not started yet
+-Implement event routes and controllers
 
 Tech Stack
 
