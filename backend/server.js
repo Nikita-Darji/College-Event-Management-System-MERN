@@ -4,6 +4,8 @@ const dotenv = require('dotenv').config()
 const PORT = process.env.PORT || 3000
 const connectdb = require('./config/connectdb')
 connectdb()
+app.use(express.json())
+
 app.use('/events',require('./route/eventHead'))
 
 app.listen(PORT,(err)=>{
