@@ -5,24 +5,42 @@ This is a beginner-level College Event Management System built using the MERN st
 Current Status
 
 -MongoDB connection setup using Mongoose
+
 -Backend APIs in progress
+
 -Frontend not started yet
+
 -Implement event routes and controllers
+
+-Home page, navbar Ui 
+
+-API calling
+
+-Get Event API
+
 
 Tech Stack
 
 -Node.js
+
 -Express
+
 -MongoDB
+
 -React
+
 -JWT Authentication
 
 Upcoming Features
 
 -User authentication (Student & Event Head)
+
 -Event CRUD operations
+
 -Event registration
+
 -Role-based access
+
 -Frontend using React
 
 Note
