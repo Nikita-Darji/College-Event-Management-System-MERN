@@ -8,6 +8,7 @@ connectdb()
 app.use(express.json())
 app.use(cors())
 
+app.use('/',require('./route/user'))
 app.use('/events',require('./route/eventHead'))
 
 app.listen(PORT,(err)=>{

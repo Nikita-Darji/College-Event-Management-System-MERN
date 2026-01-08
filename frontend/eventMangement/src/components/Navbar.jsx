@@ -7,7 +7,7 @@ export default function Navbar() {
 
                 {/* Left side */}
                 <div className="text-xl font-semibold">
-                    Event Head Panel
+                    Event Mangement System
                 </div>
 
                 {/* Right side */}
