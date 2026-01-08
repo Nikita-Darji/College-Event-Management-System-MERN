@@ -18,6 +18,12 @@ Current Status
 
 -Get Event API
 
+-Auth and role using JWT and stored password in hashcode
+
+-Token created
+
+-login routing
+
 
 Tech Stack
 

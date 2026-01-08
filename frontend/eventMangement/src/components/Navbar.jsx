@@ -7,14 +7,14 @@ export default function Navbar() {
 
                 {/* Left side */}
                 <div className="text-xl font-semibold">
-                    Event Mangement System
+                    College Events
                 </div>
 
                 {/* Right side */}
                 <ul className="flex space-x-6 text-sm">
-                    <li className="hover:text-gray-300 cursor-pointer">
+                    {/* <li className="hover:text-gray-300 cursor-pointer">
                         Dashboard
-                    </li>
+                    </li> */}
                     <li className="hover:text-gray-300 cursor-pointer">
                         Add Event
                     </li>
@@ -22,7 +22,7 @@ export default function Navbar() {
                         My Events
                     </li>
                     <li className="hover:text-gray-300 cursor-pointer">
-                        Logout
+                        LogIn
                     </li>
                 </ul>
 

@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import MainNavigation from './components/MainNavigation'
 import axios from 'axios'
+import EventDetails from './pages/EventDetails'
 
 export default function Helllo() {
 
@@ -19,7 +20,8 @@ export default function Helllo() {
     
   const router = createBrowserRouter([
     {path:'/',element:<MainNavigation/>,children:[
-      {path:'/',element:<Home/>,loader:getEventData}
+      {path:'/',element:<Home/>,loader:getEventData},
+      {path:'/eventDetails/:id',element:<EventDetails/>,loader:getEventData}
     ]}
   ])
   return (

@@ -1,9 +1,10 @@
 import React from 'react'
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
+import EventDetails from '../pages/EventDetails';
 
 export default function AllEvents() {
     const event = useLoaderData()
-    console.log(event);
+    // console.log(event);
     return (
         <>
             <div className="w-full bg-black flex grid-cols-3 gap-5 px-9 py-5">{
@@ -36,9 +37,10 @@ export default function AllEvents() {
                                 </div>
 
                                 {/* Action */}
-                                <button className="w-full bg-teal-600 hover:bg-teal-700 text-white py-2 rounded-lg font-medium transition">
+                                <Link to={`/eventDetails/${evt._id}`}><button className="w-full bg-teal-600 hover:bg-teal-700 text-white py-2 rounded-lg font-medium transition">
                                     View Details
                                 </button>
+                                </Link>
                             </div>
                         </div>
                     )
