@@ -10,6 +10,7 @@ import EventDetails from './pages/EventDetails'
 
 export default function Helllo() {
 
+  // localStorage.clear()
   const getEventData = async()=>{
     let allEvt = []
     await axios.get('http://localhost:5000/events').then(res=>{
