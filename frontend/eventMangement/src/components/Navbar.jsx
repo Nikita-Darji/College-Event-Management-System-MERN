@@ -1,14 +1,26 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import LoginBox from './LoginBox'
 
 export default function Navbar() {
-    // useEffect(asyn(req,res) => {
-    //   const user = localStorage.get()
-    // }, [])
+    
     const [isOpen,setisOpen]=useState(false)
 
+    let token = localStorage.getItem('token')
+    const [userLoggedIn,setuserLoggedIn]=useState(token?true:false)
+
+    useEffect(() => {
+      setuserLoggedIn(token?true:false)
+    }, [token])
+    
+
     const checkOpen=()=>{
-        setisOpen(true)
+        if(token){
+            localStorage.removeItem('token')
+            localStorage.removeItem('user')
+            setuserLoggedIn(false)
+        }else{
+             setisOpen(true)
+        }
     }
     return (
         <>
@@ -31,7 +43,7 @@ export default function Navbar() {
                         My Events
                     </li>
                     <li onClick={checkOpen} className="hover:text-gray-300 cursor-pointer">
-                        LogIn
+                        {userLoggedIn?'LogOut':'LogIn'}
                     </li>
                 </ul>
 

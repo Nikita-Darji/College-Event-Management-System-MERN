@@ -11,11 +11,12 @@ export default function LoginBox({onClose}) {
 
     const handleSubmit=async(e)=>{
         e.preventDefault()
-        let SignUp = isSignUp?'login':'signUp'
+        let SignUp = isSignUp?'signUp':'logIn'
         await axios.post(`http://localhost:5000/${SignUp}`,{email,password})
         .then((res)=>{
             localStorage.setItem('token',res.data.token)
             localStorage.setItem('user',JSON.stringify(res.data.user))
+            onClose()
         })
         .catch(error=>{
             console.log(error);
@@ -31,7 +32,7 @@ export default function LoginBox({onClose}) {
         >
           ×
         </button>
-    <h2 className="text-2xl font-semibold text-center mb-6">{isSignUp?'LogIn':'SignIn'}</h2>
+    <h2 className="text-2xl font-semibold text-center mb-6">{isSignUp?'SignIn':'LogIn'}</h2>
 
     <form className="space-y-2" onSubmit={handleSubmit}>
       <input
@@ -52,12 +53,12 @@ export default function LoginBox({onClose}) {
         type="submit"
         className="w-full bg-teal-600 text-white py-2 rounded hover:bg-teal-700"
       >
-        {isSignUp?'LogIn':'SignIn'}
+        {isSignUp?'SignIn':'LogIn'}
       </button>
     </form>
 
     <p className="text-sm text-center mt-4" onClick={()=>setisSignUp(pre=>!pre)}>
-     {isSignUp?'Don’t have an account?':'Already have account'}
+     {isSignUp?'Already have an Account':'Don’t have an account?'}
     </p>
   </div>
 
