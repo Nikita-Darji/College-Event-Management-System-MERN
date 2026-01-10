@@ -24,6 +24,7 @@ Current Status
 
 -login routing
 
+-Fetched SignIn and LogIn Data
 
 Tech Stack
 
