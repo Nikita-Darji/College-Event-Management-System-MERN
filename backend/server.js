@@ -10,6 +10,8 @@ app.use(cors())
 
 app.use('/',require('./route/user'))
 app.use('/events',require('./route/eventHead'))
+app.use('/register',require('./route/registration'))
+
 
 app.listen(PORT,(err)=>{
     console.log(`app is listening to port ${PORT}`)

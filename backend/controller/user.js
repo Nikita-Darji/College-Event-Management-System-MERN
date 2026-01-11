@@ -34,8 +34,7 @@ const login = async (req, res) => {
 
 }
 const allUser = async(req, res) => {
-    // const user = await User.findById(res.params.id)
-    // return res.
+    
 
 }
 
