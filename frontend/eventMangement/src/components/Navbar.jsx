@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import LoginBox from './LoginBox'
+import { useNavigate } from 'react-router-dom'
 
 export default function Navbar() {
+    const navigate = useNavigate()
     
     const [isOpen,setisOpen]=useState(false)
 
@@ -36,7 +38,7 @@ export default function Navbar() {
                     {/* <li className="hover:text-gray-300 cursor-pointer">
                         Dashboard
                     </li> */}
-                    <li className="hover:text-gray-300 cursor-pointer">
+                    <li className="hover:text-gray-300 cursor-pointer" onClick={()=>navigate('/addEvent')}>
                         Add Event
                     </li>
                     <li className="hover:text-gray-300 cursor-pointer">

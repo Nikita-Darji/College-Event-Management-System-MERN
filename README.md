@@ -4,27 +4,11 @@ This is a beginner-level College Event Management System built using the MERN st
 
 Current Status
 
--MongoDB connection setup using Mongoose
+Backend Setup: Connected the project to MongoDB using Mongoose and started building backend APIs, including routes and controllers for managing events.
 
--Backend APIs in progress
+User Authentication: Implemented user signup and login functionality using JWT authentication, where passwords are securely stored in hashed format and a token is generated after successful login.
 
--Frontend not started yet
-
--Implement event routes and controllers
-
--Home page, navbar Ui 
-
--API calling
-
--Get Event API
-
--Auth and role using JWT and stored password in hashcode
-
--Token created
-
--login routing
-
--Fetched SignIn and LogIn Data
+Frontend & API Integration: Created basic UI components like the Home page and Navbar, and connected the frontend with backend APIs to fetch event data and handle user login/signup.
 
 Tech Stack
 

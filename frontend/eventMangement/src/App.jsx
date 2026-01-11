@@ -7,10 +7,10 @@ import Home from './pages/Home'
 import MainNavigation from './components/MainNavigation'
 import axios from 'axios'
 import EventDetails from './pages/EventDetails'
+import AddEvent from './pages/AddEvent'
 
 export default function Helllo() {
 
-  // localStorage.clear()
   const getEventData = async()=>{
     let allEvt = []
     await axios.get('http://localhost:5000/events').then(res=>{
@@ -22,7 +22,8 @@ export default function Helllo() {
   const router = createBrowserRouter([
     {path:'/',element:<MainNavigation/>,children:[
       {path:'/',element:<Home/>,loader:getEventData},
-      {path:'/eventDetails/:id',element:<EventDetails/>,loader:getEventData}
+      {path:'/eventDetails/:id',element:<EventDetails/>,loader:getEventData},
+      {path:'/addEvent',element:<AddEvent/>}
     ]}
   ])
   return (

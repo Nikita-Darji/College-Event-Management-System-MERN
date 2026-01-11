@@ -7,10 +7,10 @@ export default function AllEvents() {
     // console.log(event);
     return (
         <>
-            <div className="w-full bg-black flex grid-cols-3 gap-5 px-9 py-5">{
+            <div className="w-full bg-black grid grid-cols-4 gap-5 px-9 py-5">{
                 event?.map((evt, index) => {
                     return (
-                        <div key={index} className='w-1/4 bg-white rounded-2xl overflow-hidden'>
+                        <div key={index} className='bg-white rounded-2xl overflow-hidden'>
 
                             <div className="h-48 overflow-hidden">
                                 <img
