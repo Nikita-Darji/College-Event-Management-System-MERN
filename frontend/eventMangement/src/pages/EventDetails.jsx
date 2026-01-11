@@ -1,7 +1,8 @@
 import React from 'react'
-import { useLoaderData, useParams } from 'react-router-dom'
+import { useLoaderData, useNavigate, useParams } from 'react-router-dom'
 
 export default function EventDetails() {
+    const navigate = useNavigate()
     const { id } = useParams()
     const events = useLoaderData()
     console.log(events);
@@ -36,7 +37,7 @@ export default function EventDetails() {
                 </div>
 
                 {/* Action */}
-                <button className="w-full bg-teal-900 hover:bg-teal-600 text-white py-2 rounded-lg font-medium transition">
+                <button onClick={()=>navigate(`/registration/${id}`)} className="w-full bg-teal-900 hover:bg-teal-600 text-white py-2 rounded-lg font-medium transition">
                     Register Now
                 </button>
             </div>

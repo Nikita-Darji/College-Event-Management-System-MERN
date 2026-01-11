@@ -1,6 +1,6 @@
 College Event Management System (MERN)
 
-This is a beginner-level College Event Management System built using the MERN stack. The project will have two roles: Student and Event Head. Event Heads will manage events and Students will view and register for events.
+This is a beginner-level College Event Management System built using the MERN stack. The project will have two roles: Student and Event Head. Event Head will manage events and Students will view and register for events.
 
 Current Status
 
@@ -15,8 +15,6 @@ Current Status
 --Student registration API created and linked with events using eventId reference
 
 --Registration data successfully stored with event reference passed via route parameters
-
---Register student with eventId via route params
 
 ✅ Authentication & Authorization
 
@@ -37,6 +35,8 @@ Current Status
 --Login & Signup flow connected with backend APIs
 
 --Admin can add an event
+
+--Student registration saved with eventId and studentId
 
 Tech Stack
 

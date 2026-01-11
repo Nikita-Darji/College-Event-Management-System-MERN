@@ -9,6 +9,10 @@ const registration = mongoose.Schema({
         type: String,
         required: true
     },
+    studentId:{
+        type:String,
+        required:true
+    },
     eventid: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'EventData',
