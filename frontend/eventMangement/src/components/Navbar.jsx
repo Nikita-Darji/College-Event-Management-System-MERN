@@ -8,6 +8,9 @@ export default function Navbar() {
     const [isOpen,setisOpen]=useState(false)
 
     let token = localStorage.getItem('token')
+    let user = JSON.parse(localStorage.getItem('user'))
+    // console.log(user.role);
+    
     const [userLoggedIn,setuserLoggedIn]=useState(token?true:false)
 
     useEffect(() => {
@@ -28,22 +31,18 @@ export default function Navbar() {
         <>
             <nav className="bg-teal-900 text-white px-6 py-4 flex justify-between items-center fixed w-full z-3">
 
-                {/* Left side */}
                 <div className="text-xl font-semibold">
                     College Events
                 </div>
 
-                {/* Right side */}
                 <ul className="flex space-x-6 text-sm">
-                    {/* <li className="hover:text-gray-300 cursor-pointer">
-                        Dashboard
-                    </li> */}
-                    <li className="hover:text-gray-300 cursor-pointer" onClick={()=>navigate('/addEvent')}>
+                    {user?.role==="event_head" && <li className="hover:text-gray-300 cursor-pointer" onClick={()=>navigate('/addEvent')}>
                         Add Event
-                    </li>
-                    <li className="hover:text-gray-300 cursor-pointer">
+                    </li>}
+                    
+                    {user?.role==="student" && <li className="hover:text-gray-300 cursor-pointer">
                         My Events
-                    </li>
+                    </li>}
                     <li onClick={checkOpen} className="hover:text-gray-300 cursor-pointer">
                         {userLoggedIn?'LogOut':'LogIn'}
                     </li>

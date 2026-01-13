@@ -2,6 +2,9 @@ import React from 'react'
 import { useLoaderData, useNavigate, useParams } from 'react-router-dom'
 
 export default function EventDetails() {
+
+    let user = JSON.parse(localStorage.getItem('user'))
+
     const navigate = useNavigate()
     const { id } = useParams()
     const events = useLoaderData()

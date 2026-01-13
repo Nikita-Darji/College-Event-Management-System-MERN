@@ -12,7 +12,7 @@ const user = mongoose.Schema({
     role:{
         type:String,
         enum:['student','event_head'],
-        default:'student'
+        default:'event_head'
     }
 },{timestamps:true})
 
