@@ -1,14 +1,38 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useLoaderData, useNavigate, useParams } from 'react-router-dom'
+import LoginBox from '../components/LoginBox'
 
 export default function EventDetails() {
-
-    let user = JSON.parse(localStorage.getItem('user'))
+    const { id } = useParams()
 
     const navigate = useNavigate()
-    const { id } = useParams()
+    let user = JSON.parse(localStorage.getItem('user'))
+    const [isOpen,setisOpen] = useState(false)
+    const [actionTriggered, setActionTriggered] = useState(false)
+
+    useEffect(() => {
+        if(actionTriggered){
+            setActionTriggered(false)
+        } 
+    }, [actionTriggered])
+    
+
+    const handleAction=()=>{
+        setActionTriggered(true)
+        if(!user){
+            setisOpen(true)
+            return
+        }
+        if(user.role==="event_head"){
+            navigate('/addEvent')
+        }
+        if(user.role==="student"){
+            navigate(`/registration/${id}`)
+        }
+    }
+
     const events = useLoaderData()
-    console.log(events);
+    // console.log(events);
 
     const event = events.find(env=>env._id===id)
     
@@ -39,11 +63,14 @@ export default function EventDetails() {
                     <span>⏰ {event.time}</span>
                 </div>
 
-                {/* Action */}
-                <button onClick={()=>navigate(`/registration/${id}`)} className="w-full bg-teal-900 hover:bg-teal-600 text-white py-2 rounded-lg font-medium transition">
-                    Register Now
+                <button onClick={handleAction} className="w-full bg-teal-900 hover:bg-teal-600 text-white py-2 rounded-lg font-medium transition">
+                    {!user && "Login To Register"}
+                    {user?.role==="student" && "Register Now"}
+                    {user?.role==="event_head" && "Add Student"}
                 </button>
             </div>
+
+            {isOpen && <LoginBox onClose={()=>setisOpen(false)}/>}
         </div>
     )
 }

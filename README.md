@@ -38,6 +38,8 @@ Current Status
 
 --Student registration saved with eventId and studentId
 
+--Implement dynamic single-button action based on login status and user role
+
 Tech Stack
 
 -Node.js
