@@ -24,7 +24,7 @@ export default function EventDetails() {
             return
         }
         if(user.role==="event_head"){
-            navigate('/addEvent')
+            navigate(`/registration/event/${id}`)
         }
         if(user.role==="student"){
             navigate(`/registration/${id}`)
@@ -66,7 +66,7 @@ export default function EventDetails() {
                 <button onClick={handleAction} className="w-full bg-teal-900 hover:bg-teal-600 text-white py-2 rounded-lg font-medium transition">
                     {!user && "Login To Register"}
                     {user?.role==="student" && "Register Now"}
-                    {user?.role==="event_head" && "Add Student"}
+                    {user?.role==="event_head" && "View Registered Students"}
                 </button>
             </div>
 
